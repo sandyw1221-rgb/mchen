@@ -70,6 +70,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 @media(max-width:1024px){.product-grid{grid-template-columns:repeat(2,1fr)}.specs-grid{grid-template-columns:1fr 1fr}.intro-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.product-grid{grid-template-columns:1fr}.specs-grid{grid-template-columns:1fr}.page-title{font-size:28px}.intro-img{flex-direction:column}}
 </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999" onfocus="this.style.position='static';this.style.width='auto';this.style.height='auto'">Skip to main content</a>
@@ -96,25 +97,10 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
       <a href="contact.html" style="font-size:14px;font-weight:500;color:var(--gray-300);transition:color .2s" onmouseover="this.style.color='#E8A838'" onmouseout="this.style.color='var(--gray-300)'">Contact</a>
       <a href="quote.html" class="btn btn-primary" style="padding:8px 20px;font-size:13px">Get Quote</a>
     </nav>
-    <button id="mobile-toggle" onclick="document.getElementById('main-nav').classList.toggle('nav-open')" style="display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    <button id="mobile-toggle" style="display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
-<script>
-document.querySelectorAll('.dropdown-wrap').forEach(function(el){
-  el.addEventListener('mouseenter',function(){el.querySelector('.dropdown-menu').style.display='block'});
-  el.addEventListener('mouseleave',function(){el.querySelector('.dropdown-menu').style.display='none'});
-});
-</script>
-<style>
-@media(max-width:768px){
-  #main-nav{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--dark);padding:20px 24px;gap:16px;border-bottom:1px solid rgba(255,255,255,.08)}
-  #main-nav.nav-open{display:flex}
-  #mobile-toggle{display:block!important}
-  .dropdown-menu{position:static!important;padding-top:4px!important}
-  .dropdown-menu>div{box-shadow:none!important;background:rgba(255,255,255,.05)!important}
-  .dropdown-menu>div a{color:var(--gray-300)!important}
-}
-</style>
+
 
 
 <section id="main-content" class="page-hero"><div class="container">
@@ -174,5 +160,6 @@ document.querySelectorAll('.dropdown-wrap').forEach(function(el){
 <div class="cta-btns"><a href="quote.html" class="btn btn-primary">Get a Custom Quote &#8594;</a><a href="resources-catalog.html" class="btn" style="background:rgba(255,255,255,.1);color:var(--white);border:1.5px solid rgba(255,255,255,.2)">Download Catalog</a></div>
 </div></section>
 
+<script src="script.js"></script>
 </body>
 </html>

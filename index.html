@@ -127,6 +127,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 @media(max-width:1024px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero-sub{margin:0 auto 28px}.hero-ctas{justify-content:center}.hero-right img{max-height:280px}.stats-inner{grid-template-columns:repeat(2,1fr)}.products-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.industries-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.hero-h1{font-size:30px}.hero-right img{max-height:220px}.stat-item{padding:16px 12px}.stat-num{font-size:22px}.section-title{font-size:28px}.products-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.industries-grid{grid-template-columns:repeat(2,1fr)}.about-row{grid-template-columns:1fr}.cta-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999" onfocus="this.style.position='static';this.style.width='auto';this.style.height='auto'">Skip to main content</a>
@@ -156,52 +157,8 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
     <button id="mobile-toggle" style="display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
   </div>
 </header>
-<script>
-document.querySelectorAll('.dropdown-wrap').forEach(function(el){
-  el.addEventListener('mouseenter',function(){el.querySelector('.dropdown-menu').style.display='block'});
-  el.addEventListener('mouseleave',function(){el.querySelector('.dropdown-menu').style.display='none'});
-});
-</script>
-<style>
-@media(max-width:768px){
-  #main-nav{display:none!important;flex-direction:column!important;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:20px 24px;gap:16px;border-bottom:1px solid rgba(255,255,255,.08)}
-  #main-nav.nav-open{display:flex!important}
-  #mobile-toggle{display:block!important}
-  .dropdown-menu{position:static!important;padding-top:4px!important}
-  .dropdown-menu>div{box-shadow:none!important;background:rgba(255,255,255,.05)!important}
-  .dropdown-menu>div a{color:var(--gray-300)!important}
-}
-</style>
 
-<script>
-(function(){
-  var toggle = document.getElementById('mobile-toggle');
-  var nav = document.getElementById('main-nav');
-  function closeNav(){
-    nav.classList.remove('nav-open');
-    toggle.innerHTML = '&#9776;';
-    toggle.setAttribute('aria-expanded','false');
-  }
-  toggle.addEventListener('click', function(e){
-    e.stopPropagation();
-    if(nav.classList.contains('nav-open')){
-      closeNav();
-    } else {
-      nav.classList.add('nav-open');
-      toggle.innerHTML = '&#10005;';
-      toggle.setAttribute('aria-expanded','true');
-    }
-  });
-  nav.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click', closeNav);
-  });
-  document.addEventListener('click', function(e){
-    if(nav.classList.contains('nav-open') && !nav.contains(e.target) && e.target !== toggle){
-      closeNav();
-    }
-  });
-})();
-</script><section id="main-content" class="hero">
+<section id="main-content" class="hero">
   <div class="container">
     <div class="hero-inner">
       <div class="hero-left">
@@ -349,3 +306,9 @@ document.querySelectorAll('.dropdown-wrap').forEach(function(el){
       <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="about-factory-tour.html">Factory Tour</a></li><li><a href="blog.html">Blog</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </div>
     <div c
+lass="footer-bottom">&copy; 2025 MCHEN Machine Parts Co., Ltd. All rights reserved.</div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

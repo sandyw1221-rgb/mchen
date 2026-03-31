@@ -24,4 +24,39 @@ document.addEventListener('DOMContentLoaded', function() {
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // Mobile navigation toggle
+  var toggle = document.getElementById('mobile-toggle');
+  var nav = document.getElementById('main-nav');
+  if (toggle && nav) {
+    function closeNav() {
+      nav.classList.remove('nav-open');
+      toggle.innerHTML = '\u2630';
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (nav.classList.contains('nav-open')) {
+        closeNav();
+      } else {
+        nav.classList.add('nav-open');
+        toggle.innerHTML = '\u2715';
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+    nav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeNav);
+    });
+    document.addEventListener('click', function(e) {
+      if (nav.classList.contains('nav-open') && !nav.contains(e.target) && e.target !== toggle) {
+        closeNav();
+      }
+    });
+  }
+
+  // Dropdown hover for desktop
+  document.querySelectorAll('.dropdown-wrap').forEach(function(el) {
+    el.addEventListener('mouseenter', function() { el.querySelector('.dropdown-menu').style.display = 'block'; });
+    el.addEventListener('mouseleave', function() { el.querySelector('.dropdown-menu').style.display = 'none'; });
+  });
 });
